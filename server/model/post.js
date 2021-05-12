@@ -3,11 +3,16 @@ let {Schema,model}=require('mongoose')
 let postSchema=new Schema({
     title:String,
     body:String,
-    thumbnail:String,
+    thumbnail:{
+        src:String,
+        alt:String
+    },
+    topic:String,
+    publish:Boolean,
     tags:[String],
-    user:[{
-        id:Schema.Types.ObjectId,
-        ref:'user'
+    author:[{
+        type:Schema.Types.ObjectId,
+        ref:'author'
     }]
 },{timestamps:true})
 

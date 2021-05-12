@@ -5,12 +5,12 @@ let userSchema=new Schema({
     profilePic:String,
     password:String,
     posts:[{
-        id:Schema.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:'post'
     }]
 
 },{timestamps:true})
 
-let User=model('user',userSchema)
+let Author=model('author',userSchema)
 
-module.exports=User
+module.exports=Author
