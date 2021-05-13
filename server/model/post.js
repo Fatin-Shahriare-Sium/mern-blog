@@ -7,6 +7,7 @@ let postSchema=new Schema({
         src:String,
         alt:String
     },
+    views:Number,
     topic:String,
     publish:Boolean,
     tags:[String],

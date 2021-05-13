@@ -2,6 +2,7 @@ let express=require('express')
 let mongoose=require('mongoose')
 let postRoute=require('./route/postRouter.js')
 let authRoute=require('./route/authRouter.js')
+let topicRoute=require('./route/topicRouter.js')
 var cookieParser = require('cookie-parser')
 let cors=require('cors')
 let app=express()
@@ -17,6 +18,7 @@ let middleware=[
 app.use(middleware)
 app.use('/post',postRoute)
 app.use('/auth',authRoute)
+app.use('/topic',topicRoute)
 app.get('/',(req,res)=>{
     res.json({
         creator:'Allah is Almighty',

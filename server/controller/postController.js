@@ -57,3 +57,13 @@ exports.getAllPostController=async (req,res,next)=>{
             posts:allPost
         })
 }
+
+exports.getSinglePost=async (req,res,next)=>{
+    let {id}=req.params
+    let post=await Post.findOneAndUpdate({_id:id},{
+        $inc:{views:1}
+    })
+    res.status(200).json({
+        post
+    })
+}
