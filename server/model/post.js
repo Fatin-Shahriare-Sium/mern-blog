@@ -16,7 +16,15 @@ let postSchema=new Schema({
         ref:'author'
     }]
 },{timestamps:true})
-
+postSchema.index({
+    title:'text',
+    body:'text'
+},{
+    weights:{
+        title:5,
+        body:3
+    }
+})
 let Post=model('post',postSchema)
 
 module.exports=Post
