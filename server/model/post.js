@@ -3,6 +3,7 @@ let {Schema,model}=require('mongoose')
 let postSchema=new Schema({
     title:String,
     body:String,
+    description:String,
     thumbnail:{
         src:String,
         alt:String

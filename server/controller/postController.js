@@ -3,14 +3,16 @@ const Topic = require("../model/topic");
 
 exports.createPostController=async (req,res,next)=>{
     console.log(req.body);
-    let {title,body,img,alt,publish,tags,topic}=req.body
+    let {title,body,img,alt,publish,tags,topic,description}=req.body
     let post=new Post({
         title,
         body,
+        description,
         thumbnail:{
             src:img,
             alt:alt
         },
+        views:0,
         topic,
         publish:publish,
         tags,
